@@ -7,13 +7,13 @@
 			if($num == $adivina)
             {  
 				
-                                echo "ganaste!";
-                          }
-                        else 
-                            {
-                                echo "perdiste! <br>";
+                echo "ganaste!";
+            }
+            else 
+            {
+                echo "perdiste! <br>";
 				echo "el numero era ".$adivina;
-                            }
+			}
 		?>
 	<body>
 <html>	

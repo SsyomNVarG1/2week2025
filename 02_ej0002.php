@@ -2,6 +2,7 @@
 </head>
 <body>
 <?php 
+
    
 if(isset($_POST['check1']) && $_POST['check1'] == 'suma')
 {
