@@ -1,36 +1,35 @@
-<?php 
-// Creamos un directorio o carpeta  
+<?php
+// Creamos un directorio o carpeta
+$directorio = "mis_fotos";
+$dirmake = mkdir("$directorio", 0777);
+?>
 
-$directorio = "mis_fotos"; 
-$dirmake = mkdir("$directorio", 0777); 
-?> 
-=================================== 
-<?php 
+===================================
+
+<?php
 // Eliminamos un directorio o carpeta vacio 
+$directorio = "mis_fotos";
+$dirmake = rmdir("$directorio");
+?>
 
-$directorio = "mis_fotos"; 
-$dirmake = rmdir("$directorio"); 
-?> 
-=================================== 
-<?php 
+===================================
+
+<?php
 // Eliminamos la foto - en_la_playa.jpg - que está en el  
 // directorio en el directorio - mis_fotos - 
+$foto = "mis_fotos/en_la_playa.jpg";
+unlink($foto);
+?>
 
-$foto = "mis_fotos/en_la_playa.jpg"; 
-unlink($foto); 
+===================================
 
-?> 
-=================================== 
-<?php  
+<?php
 // Eliminamos todas las fotos contenidas en el directorio - mis_fotos - y seguidamente 
 // eliminamos la carpeta o directorio 
-
 $mis_fotos = "mis_fotos";    // Carpeta que contine archivos y queremos eliminar 
 
-foreach(glob($mis_fotos."/*.*") as $archivos_carpeta)  
-{  
- unlink($archivos_carpeta);     // Eliminamos todos los archivos de la carpeta hasta dejarla vacia  
-}  
-rmdir($mis_fotos);         // Eliminamos la carpeta vacia  
-
+foreach (glob($mis_fotos . "/*.*") as $archivos_carpeta) {
+  unlink($archivos_carpeta);     // Eliminamos todos los archivos de la carpeta hasta dejarla vacia  
+}
+rmdir($mis_fotos);         // Eliminamos la carpeta vacia
 ?>

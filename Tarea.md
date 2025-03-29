@@ -1,10 +1,9 @@
 ### En este repositorio encontraran algunos pequeños ejercicios y funciones simples para poder ir ganando confianza en el manejo de un entorno de trabajo sumado a un lenguaje simple pero con grandes prestaciones a futuro
 
-
 ### Listado de tareas a desarrollar
 
 - Pensar en un formulario que sirva para la captura de datos de un evento masivo. (Puede ser cualquier Rubro)
-En el formulario se deberań solicitar de minima los siguientes datos (ver el orden en el cual se solicitaran y cuales serán requeridos en forma obligatoria) ** validación**
+  En el formulario se deberań solicitar de minima los siguientes datos (ver el orden en el cual se solicitaran y cuales serán requeridos en forma obligatoria) ** validación**
 - Apellidos
 - Nombres
 - Fecha de la asistencia al evento (el mismo será en 3 días corridos, puede seleccionar 1 como varios)

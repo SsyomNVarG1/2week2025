@@ -1,13 +1,23 @@
 <html>
-	<head> <title> Adivina </title> </head>
-	<body>
-		<form action ="01_adivina.php" method = "post" >
-		Ingrese un numero del 1 al 20 <input type = "text" name ="valor1" >
-		<br>
-		<input type ="submit" name ="realizar" >
-		<input type ="reset" name ="borrar">
-		</form>
+  <head>
+    <title>Adivina</title>
+  </head>
+  <body>
+    <form action="./01_adivina.php" method="POST">
+      Ingrese un numero del 1 al 20
+      <input
+        type="number"
+        name="valor1"
+        id="valor1"
+        min="1"
+        max="20"
+        autocomplete="off"
+        required
+      />
+      <br />
 
-	</body>
-
+      <input type="submit" value="Realizar" />
+      <input type="reset" value="Borrar" />
+    </form>
+  </body>
 </html>

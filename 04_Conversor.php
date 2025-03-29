@@ -1,40 +1,53 @@
 <html>
+
 <head>
-<title> Conversor </title>
+  <title>Conversor</title>
 </head>
+
 <body>
-<?php 
-$Importe = $_POST['Valor'];
-if ($_POST['Radio1'] == "Dolar")
-{
+  <?php
+  if (isset($_POST)) {
+    $importe = (isset($_POST['valor'])) ? (float)$_POST['valor'] : false;
+    $importe = ($importe < 1) ? 1 : $importe;
 
-$Dolar= $Importe*8;
-Echo " El valor convertido en dolar es :".$Dolar;
+    $tipo_de_cambio = (isset($_POST['radio1'])) ? $_POST['radio1'] : false;
 
-}
+    if ($tipo_de_cambio === false) header('Location: 04_Conversor.html');
+    switch ($tipo_de_cambio) {
+      case 'Dolar': {
+          $dolar = $importe * 8;
+          echo "<p>El valor convertido en dolar es: " . $dolar . "</p>";
+          break;
+        }
 
-elseif($_POST['Radio1'] == "Peso Chileno")
-{
+      case 'Peso Chileno': {
+          $peso_chileno = $importe * 68.35;
+          echo "<p>El valor convertido en pesos chilenos es: " . $peso_chileno . "</p>";
+          break;
+        }
 
-$PesoChileno= $Importe*68.35;
-Echo " El valor convertido en pesos chilenos es :".$PesoChileno;
+      case 'Euros': {
+          $euros = $importe * 10.30;
+          echo "<p>El valor convertido en euros es: " . $euros . "</p>";
+          break;
+        }
 
-}
+      case 'Pesos Argentinos': {
+          $pesos_argentinos = $importe * 1;
+          echo "<p>El valor convertido en pesos argentinos es: " . $pesos_argentinos . "</p>";
+          break;
+        }
 
-elseif($_POST['Radio1'] == "Euros")
-{
+      default:
+        echo "<p>El tipo de cambio no es valido.</p>";
+        break;
+    }
 
-$Euros= $Importe*10.30;
-Echo " El valor convertido en euros es :".$Euros;
+    echo '<a href="./04_Conversor.html">Volver</a>';
+  } else {
+    header('Location: 04_Conversor.html');
+  }
+  ?>
+</body>
 
-
-}
-
-elseif($_POST['Radio1'] == "Pesos Argentinos")
-{
-
-$PesosArgentinos= $Importe*1;
-Echo " El valor convertido en pesos argentinos es :".$PesosArgentinos;
-}
-
-?> </body></html>
+</html>

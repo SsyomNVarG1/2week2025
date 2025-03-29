@@ -1,24 +1,30 @@
 <html>
-<body>
-<Title> Conversor </title>
-</head>
-<body>
-<Form action = "04_Conversor.php" method = "POST">
-Ingrese importe <input type = "text" name = "Valor"> <br>
-<br>
+  <head>
+    <title>Conversor</title>
+  </head>
+  <body>
+    <form action="./04_Conversor.php" method="POST">
+      Ingrese importe
+      <input
+        type="number"
+        name="valor"
+        id="valor"
+        min="1"
+        autocomplete="off"
+        required
+      /><br /><br />
 
-<input type= "Radio" Name = "Radio1" Value = "Dolar"> Dolar <br>
-<br>
+      <input type="radio" name="radio1" value="Dolar" /> Dolar <br /><br />
 
-<input type= "Radio" Name = "Radio1" Value = "Peso Chileno"> Peso Chileno<br>
+      <input type="radio" name="radio1" value="Peso Chileno" /> Peso Chileno
+      <br /><br />
 
+      <input type="radio" name="radio1" value="Euros" /> Euros <br /><br />
 
-<br><input type= "Radio" Name = "Radio1" Value = "Euros"> Euros <br>
+      <input type="radio" name="radio1" value="Pesos Argentinos" /> Pesos
+      Argentinos <br /><br />
 
-
-<br><input type= "Radio" Name = "Radio1" Value = "Pesos Argentinos"> Pesos Argentinos <br>
-<br>
-
-<input type = "submit" value= "Realizar">
-
-</form> </body> </html>
+      <input type="submit" value="Realizar" />
+    </form>
+  </body>
+</html>

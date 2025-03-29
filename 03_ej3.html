@@ -1,30 +1,36 @@
 <html>
-<head>
-<title>Calculo de intereses </title>
+  <head>
+    <title>Calculo de intereses</title>
+  </head>
+  <body>
+    <form action="./03_ej3.php" method="POST">
+      Ingrese Importe a Financiar
+      <input
+        type="number"
+        name="valor1"
+        id="valor1"
+        autocomplete="off"
+        min="1"
+        required
+      /><br /><br />
 
-</head>
-<body>
+      <!--- EN EL VALUE LE AGREGUE EL VALOR DE 1 A 12 --->
+      <input type="radio" name="radio1" value="1" /> 1 cuota <br />
+      <input type="radio" name="radio1" value="2" /> 2 cuotas <br />
+      <input type="radio" name="radio1" value="3" /> 3 cuotas <br />
+      <input type="radio" name="radio1" value="4" /> 4 cuotas <br />
+      <input type="radio" name="radio1" value="5" /> 5 cuotas <br />
+      <input type="radio" name="radio1" value="6" /> 6 cuotas <br />
+      <input type="radio" name="radio1" value="7" /> 7 cuotas <br />
+      <input type="radio" name="radio1" value="8" /> 8 cuotas <br />
+      <input type="radio" name="radio1" value="9" /> 9 cuotas <br />
+      <input type="radio" name="radio1" value="10" /> 10 cuotas <br />
+      <input type="radio" name="radio1" value="11" /> 11 cuotas <br />
+      <input type="radio" name="radio1" value="12" /> 12 cuotas <br /><br />
 
-<form action ="03_ej3.php" method = "post" >
-Ingrese Importe a Financiar  <input type = "text" name ="valor1" > <br>
-
-<br>
-<! EN EL VALUE LE AGREGUE EL VALOR DE 1 A 12 ---> 
-<input type = "radio" name="radio1" value = 1> 1 cuota <br>
-<input type = "radio" name="radio1" value = 2> 2 cuotas <br>
-<input type = "radio" name="radio1" value = 3> 3 cuotas <br>
-<input type = "radio" name="radio1" value = 4> 4 cuotas <br>
-<input type = "radio" name="radio1" value = 5> 5 cuotas <br>
-<input type = "radio" name="radio1" value = 6> 6 cuotas <br>
-<input type = "radio" name="radio1" value = 7> 7 cuotas <br>
-<input type = "radio" name="radio1" value = 8> 8 cuotas <br>
-<input type = "radio" name="radio1" value = 9> 9 cuotas <br>
-<input type = "radio" name="radio1" value = 10> 10 cuotas <br>
-<input type = "radio" name="radio1" value = 11> 11 cuotas <br>
-<input type = "radio" name="radio1" value = 12> 12 cuotas <br> <br>
-<input type ="submit" name ="Realizar" >
-<! TYPE RESET SIRVE PARA BLANQUEAR  ---> 
-<input type ="reset" VALUE ="Limpiar" >
-</body>
-
+      <input type="submit" value="Realizar" />
+      <!--- TYPE RESET SIRVE PARA BLANQUEAR  --->
+      <input type="reset" value="Limpiar" />
+    </form>
+  </body>
 </html>
