@@ -3,14 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tarea</title>
+    <title>Tarea25Marzo2025</title>
 </head>
 <body>
+
+<h1>Evento del terciario: </h1>
+
+<form action="Tarea25Marzo2025.php" method="POST">
+
+    <p>Apellido</p>
+    <input type="text" name="apellido" required>
     
-    <h1>Formulario para inscripcion a evento masivo</h1>
+    <p>Nombre/nombres</p>
+    <input type="text" name="nombres" required>
     
+    <p>Fecha de asistencia al evento: </p>
+    <input type="date" name="fecha_de_asist" required>
+
+    <p>correo electronico</p>
+    <input type="email" name="correo" required>
+    
+    <p>Año de nacimiento</p>
+    <input type="number" name="nacimiento" required>
+
+    <p>Facebook</p>
+    <input type="url" name="facebook">
+    
+    <p>Instagram</p>
+    <input type="url" name="ig">
+
+    <p>perfil tuyo (osea describete): </p>
+    <input type="text" name="perfil">
+
+    <p>a que cursos asistiras</p>
+
+    <label for="">
+        <input type="checkbox" name="cursos" value="backend">
+        <p>Backend</p>
+        </label>
+
+    <label for=""> 
+        <input type="checkbox" name="cursos" value="frontend">
+        <p>Frontend</p>
+    
+    </label>
+
+    <label for=""><input type="checkbox" name="cursos" value="fullstack|">
+        <p>Fullstack</p>
+        
+    </label>
+
+    <input type="submit" value="subir documento">
 
 
+</form>
 
 
 </body>
