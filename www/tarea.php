@@ -9,6 +9,8 @@ $nac = $_POST['nacimiento'];
 
 $dif = 2025- $nac;
 
+#validacion de edad meto aca.
+
 if( $dif >= 18){
     echo("Eres mayor de edad por lo tanto tus datos fueron  guardados");
     #No se guardar datos asi que le consulto al profe, pero la idea es esta
