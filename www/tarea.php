@@ -14,7 +14,13 @@ if( $dif >= 18){
     echo("Eres mayor de edad por lo tanto tus datos fueron  guardados");
     #No se guardar datos asi que le consulto al profe, pero la idea es esta
 
-    
+    $nombre = $_POST['nombres'];
+    $apellido = $_POST['apellido'];
+    $email = $_POST['correo'];
+    $rs1 = $_POST['facebook'];
+    $rs2 = $_POST['instagram'];
+    $perfil = $_POST['perfil'];
+
 
 }
 else{
