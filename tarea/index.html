@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro al Evento</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registro al Evento</h2>
+        <form method="post" action="validate-data.php">
+            <label for="apellido">Apellidos *</label>
+            <input type="text" id="apellido" name="apellido">
+
+            <label for="nombre">Nombres *</label>
+            <input type="text" id="nombre" name="nombre">
+
+            <label>Fecha de Asistencia *</label>
+            <div>
+                <input type="checkbox" id="dia1" name="fecha-asistencia[]" value="dia1">
+                <label for="dia1">Día 1</label>
+
+                <input type="checkbox" id="dia2" name="fecha-asistencia[]" value="dia2">
+                <label for="dia2">Día 2</label>
+
+                <input type="checkbox" id="dia3" name="fecha-asistencia[]" value="dia3">
+                <label for="dia3">Día 3</label>
+            </div>
+
+            <label for="email">Correo Electrónico *</label>
+            <input type="email" id="email" name="email">
+
+            <label for="fecha-nacimiento">Fecha de Nacimiento *</label>
+            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+
+            <label for="redes">Redes Sociales (Opcional)</label>
+            <input type="url" id="redes" name="redes" placeholder="https://tusocial.com/usuario">
+
+            <label for="perfil">Perfil del Inscripto *</label>
+            <select id="perfil" name="perfil">
+                <option value="">Seleccione...</option>
+                <option value="estudiante">Estudiante</option>
+                <option value="profesional">Profesional</option>
+                <option value="emprendedor">Emprendedor</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <label>Charlas / Cursos *</label>
+            <div>
+                <input type="checkbox" id="charla1" name="charlas[]" value="charla1">
+                <label for="charla1">Charla 1</label>
+
+                <input type="checkbox" id="charla2" name="charlas[]" value="charla2">
+                <label for="charla2">Charla 2</label>
+
+                <input type="checkbox" id="curso1" name="charlas[]" value="curso1">
+                <label for="curso1">Curso 1</label>
+
+                <input type="checkbox" id="meet1" name="charlas[]" value="meet1">
+                <label for="meet1">Meet 1</label>
+            </div>
+
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+</body>
+</html>
