@@ -1,58 +1,77 @@
 <font face="Arial, Trebuchet MS, Verdana" size="2" color="#000000">
 
   <?php
-  $op = $_POST['op'];
-  $existe = 0;
-  $archivo = fopen('result.dat', 'a+') or die("no puedo abrir archivo");
-  $archivo2 = fopen('result.tmp', 'a+') or die("no puedo abrir archivo temporal de trabajo");
-  while (!feof($archivo) && $existe == 0) {
-    $linea = fgets($archivo);
-    $datos = explode("|", $linea);
-    $seek = $datos[0];
-    $count_vote = $datos[1];
-    settype($count_vote, "integer");
-    settype($seek, "integer");
-    settype($op, "integer");
-    if ($seek == $op) {
-      $count_vote++;
-      $existe = 1;
+  if (!empty($_POST)) {
+    $op = isset($_POST['op']) ? (int)$_POST['op'] : 0;
+    
+    if ($op < 1 || $op > 6) {
+      header("Location: opcion.php");
+      exit;
     }
-  }
-  if ($existe == 0) {
-    fclose($archivo);
-    $archivo = fopen('result.dat', 'a') or die("no puedo abrir archivo");
-    $count_vote = 1;
-    fputs($archivo, $op . "|" . $count_vote . "\n");
-  } else {
-    fclose($archivo);
-    $archivo = fopen('result.dat', 'r') or die("no puedo abrir archivo");
+    
+    $existe = 0;
+    $count_vote = 0;
+    $lineas = [];
+    
+    // Abrir archivo para lectura
+    $archivo = @fopen('result.dat', 'r+') or die("No puedo abrir archivo");
+    
+    // Leer todo el archivo y buscar la opción
     while (!feof($archivo)) {
       $linea = fgets($archivo);
+      if (empty(trim($linea))) continue;
+      
       $datos = explode("|", $linea);
-      $seek = $datos[0];
-      settype($seek, "integer");
-      settype($op, "integer");
+      if (count($datos) < 2) continue;
+      
+      $seek = (int)$datos[0];
+      $votos = (int)$datos[1];
+      
       if ($seek == $op) {
-        fputs($archivo2, $op . "|" . $count_vote . "\n");
+        $count_vote = $votos + 1;
+        $existe = 1;
+        $lineas[] = "$op|$count_vote\n";
       } else {
-        fputs($archivo2, $linea);
+        $lineas[] = $linea;
       }
     }
+    
+    // Si no existe la opción, agregarla con un voto
+    if ($existe == 0) {
+      $count_vote = 1;
+      $lineas[] = "$op|$count_vote\n";
+    }
+    
+    fclose($archivo);
+    
+    $archivo = @fopen('result.dat', 'w') or die("No puedo abrir archivo para escritura");
+    foreach ($lineas as $linea) {
+      fputs($archivo, $linea);
+    }
+    fclose($archivo);
+    
+    $total_votos = 0;
+    foreach ($lineas as $linea) {
+      $datos = explode("|", $linea);
+      if (count($datos) >= 2) {
+        $total_votos += (int)$datos[1];
+      }
+    }
+    
+    echo "<a href='javascript:history.back(-1);'>Se ha realizado la actualización. ¿Desea volver?</a>";
+    echo "<br /><br />";
+    echo "<b><u>RESULTADOS ENCUESTA</b></u>";
+    echo "<br />";
+    echo "Votos para opción $op: <b>{$count_vote}</b>";
+    echo "<br />";
+    echo "Total Votos: <b>{$total_votos}</b>";
+    echo "<br /><br />";
+    echo "<a href='javascript:history.back(-1);'>Volver</a>";
+    echo "<br />";
+  } else {
+    header("Location: opcion.php");
+    exit;
   }
-
-  echo "<a href=javascript:history.back(-1);>Se ha realizado la actualizaci�n desea volver?</a>";
-  fclose($archivo);
-  fclose($archivo2);
-  if ($existe == 1) {
-    unlink("result.dat");
-    rename("result.tmp", "result.dat");
-  }
-  echo "<b><u>RESULTADOS ENCUESTA</b></u>";
-  echo "<br /><br />";
-  echo "Total Votos: <b>$votos</b>";
-  echo "<br /><br />";
-  echo "<a href=javascript:history.back(-1);>Volver</a>";
-  echo "<br />";
-  ?>
+?>
 
 </font>
