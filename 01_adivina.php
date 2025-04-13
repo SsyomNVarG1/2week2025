@@ -6,7 +6,6 @@
 			$adivina = rand(1,20);
 			if($num == $adivina)
             {  
-				
                 echo "ganaste!";
             }
             else 
@@ -16,4 +15,4 @@
 			}
 		?>
 	<body>
-<html>	
+<html>

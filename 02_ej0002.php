@@ -4,13 +4,13 @@
 <?php 
 
    
-if(isset($_POST['check1']) && $_POST['check1'] == 'suma')
+if(isset($_POST['check']) && $_POST['check'] == 'suma')
 {
 	$sumar=$_POST['valor1'] + $_POST['valor2'];
 	echo "la suma es ".$sumar ;
 	
 }
- if(isset($_POST['check2']) && $_POST['check2'] == 'resta')
+ if(isset($_POST['check']) && $_POST['check'] == 'resta')
 {
 		 $restar= $_POST['valor1'] - $_POST['valor2'];
 		 echo "la resta es ".$restar ;	 
